@@ -99,13 +99,9 @@
                     {
                         approveUserName:'Step1',
                         startTime:'2019-06-20',
-                        operator:'Who one',
-                        remark:"agree"
                     },{
                         approveUserName:'Step2',
                         startTime:'2019-06-20',
-                        operator:'Who another',
-                        remark:"reject"
                     }
                 ],
                 changeList:[
@@ -113,15 +109,15 @@
                         approveUserName:'Step3',
                         startTime:'2019-06-20',
                         operator:'3',
-                        remark:"yes"
+                        remark: 'yes'
                     },{
                         approveUserName:'Step4',
                         startTime:'2019-06-20',
                         operator:'4',
-                        remark:"no"
+                        remark:'no'
                     }
                 ]
-            }
+            };
         },
         computed: {
 
@@ -141,5 +137,5 @@
         mounted () {
 //            this.change();
         }
-    }
+    };
 </script>
