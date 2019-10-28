@@ -1,88 +1,11 @@
 <template>
 <div>
     <Steps :current="index">
-        <!--<Step title="开始"></Step>-->
-        <Step v-for="(item, index) in activitiList" :title="item.approveUserName" :key="index"  :content="item.startTime" :operator="item.operator" :remark="item.remark"></Step>
-        <!--<Step title="结束"></Step>-->
+        <Step v-for="(item, index) in BoxListNew" :key="index" :stepList="item.Nodes" :currentIdx="index" :status="item.Nodes[0].status"></Step>
     </Steps>
     <br><br><br><br>
     <Button @click="change">change</Button>
     <br><br><br><br>
-    <hr>
-    <!--<Steps :current="1" size="small">-->
-        <!--<Step title="已完成" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="进行中" content="这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息"></Step>-->
-    <!--</Steps>-->
-    <!--<br>-->
-    <!--<Steps :current="2">-->
-        <!--<Step title="已完成"></Step>-->
-        <!--<Step title="进行中"></Step>-->
-        <!--<Step title="待进行"></Step>-->
-        <!--<Step title="待进行"></Step>-->
-    <!--</Steps>-->
-    <!--<br>-->
-    <!--<Steps :current="1" size="small">-->
-        <!--<Step title="已完成"></Step>-->
-        <!--<Step title="进行中"></Step>-->
-        <!--<Step title="待进行"></Step>-->
-        <!--<Step title="待进行"></Step>-->
-    <!--</Steps>-->
-    <!--<br>-->
-    <!--<Steps :current="1" direction="vertical" size="small">-->
-        <!--<Step title="注册" icon="person-add"></Step>-->
-        <!--<Step title="上传头像" icon="camera" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="验证邮箱" icon="email"></Step>-->
-    <!--</Steps>-->
-    <!--<Steps :current="1" direction="vertical">-->
-        <!--<Step title="注册" icon="person-add"></Step>-->
-        <!--<Step title="上传头像" icon="camera" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="验证邮箱" icon="email"></Step>-->
-    <!--</Steps>-->
-    <!--<Steps :current="-1" direction="vertical">-->
-        <!--<Step title="注册" icon="person-add"></Step>-->
-        <!--<Step title="上传头像" icon="camera" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="验证邮箱" status="finish" icon="email"></Step>-->
-    <!--</Steps>-->
-    <!--<br>-->
-    <!--<p>当前正在进行第 {{ current + 1 }} 步</p>-->
-    <!--<Steps :current="current">-->
-        <!--<Step title="步骤1"></Step>-->
-        <!--<Step title="步骤2"></Step>-->
-        <!--<Step title="步骤3"></Step>-->
-        <!--<Step title="步骤4"></Step>-->
-    <!--</Steps>-->
-    <!--<br>-->
-    <!--<i-button type="primary" @click.native="next">下一步</i-button>-->
-    <!--<br><br><br>-->
-    <!--<Steps :current="1" direction="vertical" size="small">-->
-        <!--<Step title="已完成" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="进行中" content="这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息这里是该步骤的描述信息这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息"></Step>-->
-    <!--</Steps>-->
-    <!--<br><br>-->
-    <!--<Steps :current="1" status="error">-->
-        <!--<Step title="已完成" content="这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="进行中" content="这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息"></Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息"></Step>-->
-    <!--</Steps>-->
-    <!--<Steps direction="vertical" :current="3">-->
-        <!--<Step title="已完成" content="这里是该步骤的描述信息">-->
-            <!--<div style="font-size: 16px; color: green">这里是该步骤的描述信息1</div>-->
-        <!--</Step>-->
-        <!--<Step title="进行中" content="这里是该步骤的描述信息">-->
-            <!--<div style="font-size: 24px; color: red">这里是该步骤的描述信息2</div>-->
-        <!--</Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息">-->
-            <!--<div style="font-size: 46px; color: blue">这里是该步骤的描述信息3</div>-->
-        <!--</Step>-->
-        <!--<Step title="待进行" content="这里是该步骤的描述信息">-->
-            <!--<div style="font-size: 24px; color: green">这里是该步骤的描述信息4</div>-->
-        <!--</Step>-->
-    <!--</Steps>-->
 </div>
 </template>
 <script>
@@ -95,26 +18,205 @@
                 total: 512,
                 current: 0,
                 index:0,
-                activitiList:[
+                BoxListNew: [],
+                BoxList: [
                     {
-                        approveUserName:'Step1',
-                        startTime:'2019-06-20',
-                    },{
-                        approveUserName:'Step2',
-                        startTime:'2019-06-20',
-                    }
-                ],
-                changeList:[
+                        Nodes: [
+                            {
+                                Name: 'node1',
+                                Desc: '中心负责人1-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
                     {
-                        approveUserName:'Step3',
-                        startTime:'2019-06-20',
-                        operator:'3',
-                        remark: 'yes'
-                    },{
-                        approveUserName:'Step4',
-                        startTime:'2019-06-20',
-                        operator:'4',
-                        remark:'no'
+                        Nodes: [
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人2-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            },
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人2-2',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人3-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            },
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人3-2',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 0,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
                     }
                 ]
             };
@@ -135,7 +237,25 @@
             }
         },
         mounted () {
-//            this.change();
+           var BoxListData = this.BoxList;
+           BoxListData.forEach(item => {
+               item.Nodes.forEach(node => {
+                   node.Operator = '可达鸭(10086)'
+                   if (node.Flag) {
+                        node.status  = 'finish';
+                        node.remark  = '同意';
+                    } else {
+                        node.status  = 'error';
+                        node.remark  = '拒绝';
+                    }
+                    if (node.Flag === 2) { 
+                        node.status  = 'wait';
+                        node.remark  = '待审批';
+                    }
+               });
+           });
+           this.BoxListNew = BoxListData;
+           console.log(this.BoxListNew);
         }
     };
 </script>

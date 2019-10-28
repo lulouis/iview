@@ -30,6 +30,10 @@
                 type: Number,
                 default: 0
             },
+            currentNode: {
+                type: Number,
+                default: 0
+            },
             status: {
                 validator (value) {
                     return oneOf(value, ['wait', 'process', 'finish', 'error']);
@@ -62,9 +66,9 @@
         methods: {
             updateChildProps (isInit) {
                 const total = this.$children.length;
+                console.log(this.$children);
                 this.$children.forEach((child, index) => {
-                    child.stepNumber = index + 1;
-
+                    child.stepNumber = this.currentNode + 1;
                     if (this.direction === 'horizontal') {
                         child.total = total;
                     }
@@ -126,7 +130,8 @@
             this.$on('remove', this.debouncedAppendRemove());
         },
         watch: {
-            current () {
+            current (val) {
+                console.log(val);
                 this.updateChildProps();
             },
             status () {

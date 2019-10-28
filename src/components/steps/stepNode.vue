@@ -1,9 +1,20 @@
 <template>
     <div :class="wrapClasses" :style="styles">
-        <div :class="[prefixCls + '-tail']"><i></i></div>
-        <Steps :current="index" :currentNode="currentIdx" direction="vertical">
-            <StepNode v-for="(item, idx) in stepList" :key="idx" :status="item.status" :title="item.Desc" :operatorTime="item.OperatorTime" :operator="item.Operator" :remark="item.remark"></StepNode>
-        </Steps>
+        <div :class="[prefixCls + '-tail']" style="display:block;"><i></i></div>
+        <div :class="[prefixCls + '-head']">
+            <div :class="[prefixCls + '-head-inner']">
+                <span v-if="!icon && currentStatus != 'finish' && currentStatus != 'error'">{{ stepNumber }}</span>
+                <span v-else :class="iconClasses"></span>
+            </div>
+        </div>
+        <div :class="[prefixCls + '-main']">
+            <div :class="[prefixCls + '-title']">{{ title }}</div>
+            <slot>
+                <div v-if="operatorTime" :class="[prefixCls + '-content']">{{ operatorTime }}</div>
+                <div v-if="operator" :class="[prefixCls + '-content']">{{ operator }}</div>
+                <div v-if="remark" :class="[prefixCls + '-content']">{{ remark }}</div>
+            </slot>
+        </div>
     </div>
 </template>
 <script>
@@ -14,7 +25,7 @@
     const iconPrefixCls = 'ivu-icon';
 
     export default {
-        name: 'Step',
+        name: 'StepNode',
         mixins: [ Emitter ],
         props: {
             status: {
@@ -22,17 +33,14 @@
                     return oneOf(value, ['wait', 'process', 'finish', 'error']);
                 }
             },
-            currentIdx: {
-                type: Number
-            },
-            stepList: {
-                type: Array
-            },
             title: {
                 type: String,
                 default: ''
             },
             content: {
+                type: String
+            },
+            operatorTime: {
                 type: String
             },
             operator: {
@@ -47,7 +55,6 @@
         },
         data () {
             return {
-                index: 0,
                 prefixCls: prefixCls,
                 stepNumber: '',
                 nextError: false,
@@ -93,8 +100,6 @@
                 };
             }
         },
-        methods: {
-        },
         watch: {
             status (val) {
                 this.currentStatus = val;
@@ -114,3 +119,20 @@
         }
     };
 </script>
+<style scoped>
+.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-process .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-process .ivu-steps-tail > i:after {
+    background: #e9eaec!important;
+}
+.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-wait .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-wait .ivu-steps-tail > i:after {
+    background: #e9eaec!important;
+}
+.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail > i:after {
+    background: #2d8cf0!important;
+}
+.ivu-steps-vertical .ivu-steps-main .ivu-steps-content {
+    padding-bottom: 4px;
+}
+.ivu-steps-vertical .ivu-steps-item:last-child .ivu-steps-tail {
+    display: none!important;
+}
+</style>

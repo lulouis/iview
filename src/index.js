@@ -5,6 +5,7 @@ import Steps from './components/steps';
 const components = {
 
     Step: Steps.Step,
+    StepNode: Steps.StepNode,
     Steps
 
 };
