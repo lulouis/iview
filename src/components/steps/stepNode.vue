@@ -119,20 +119,3 @@
         }
     };
 </script>
-<style scoped>
-.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-process .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-process .ivu-steps-tail > i:after {
-    background: #e9eaec!important;
-}
-.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-wait .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-wait .ivu-steps-tail > i:after {
-    background: #e9eaec!important;
-}
-.ivu-steps-vertical .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail > i, .ivu-steps-vertical .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail > i:after {
-    background: #2d8cf0!important;
-}
-.ivu-steps-vertical .ivu-steps-main .ivu-steps-content {
-    padding-bottom: 4px;
-}
-.ivu-steps-vertical .ivu-steps-item:last-child .ivu-steps-tail {
-    display: none!important;
-}
-</style>

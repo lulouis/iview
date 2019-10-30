@@ -66,7 +66,6 @@
         methods: {
             updateChildProps (isInit) {
                 const total = this.$children.length;
-                console.log(this.$children);
                 this.$children.forEach((child, index) => {
                     child.stepNumber = this.currentNode + 1;
                     if (this.direction === 'horizontal') {
