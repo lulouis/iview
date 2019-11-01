@@ -12,7 +12,7 @@ gulp.task('css', function () {
             browsers: ['last 2 versions', 'ie > 8']
         }))
         .pipe(cleanCSS())
-        .pipe(rename('marisfrolg_iview.css'))
+        .pipe(rename('iview.css'))
         .pipe(gulp.dest('../dist/styles'));
 });
 
@@ -22,4 +22,4 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('../dist/styles/fonts'));
 });
 
-gulp.task('default', ['css']);
+gulp.task('default', ['css', 'fonts']);

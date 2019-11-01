@@ -1551,7 +1551,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 var API = (0, _extends3.default)({
-    version: '2.15.1',
+    version: '2.17.0',
     install: install
 }, components);
 
