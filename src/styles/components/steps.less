@@ -31,6 +31,13 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @steps-wait-tail-color;
             }
+            &+div .@{steps-prefix-cls}-tabline {
+                background-color: @steps-wait-tail-color;
+                &:before,
+                &:after {
+                    background-color: @steps-wait-tail-color;
+                }
+            }
         }
         &.@{steps-prefix-cls}-status-process {
             .@{steps-prefix-cls}-head-inner {
@@ -49,6 +56,13 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @border-color-split;
             }
+            &+div .@{steps-prefix-cls}-tabline {
+                background-color: @border-color-split;
+                &:before,
+                &:after {
+                    background-color: @border-color-split;
+                }
+            }
         }
         &.@{steps-prefix-cls}-status-finish {
             .@{steps-prefix-cls}-head-inner {
@@ -63,6 +77,13 @@
                 background: @primary-color;
                 // transition: all @transition-time @ease-in-out;
                 opacity: 1;
+            }
+            &+div .@{steps-prefix-cls}-tabline {
+                background: @primary-color;
+                &:before,
+                &:after {
+                    background: @primary-color;
+                }
             }
             .@{steps-prefix-cls}-title {
                 color: @steps-wait-title-color;
@@ -89,12 +110,26 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @border-color-split;
             }
+            &+div .@{steps-prefix-cls}-tabline {
+                background-color: @border-color-split;
+                &:before,
+                &:after {
+                    background-color: @border-color-split;
+                }
+            }
         }
 
         &.@{steps-prefix-cls}-next-error {
             .@{steps-prefix-cls}-tail > i,
             .@{steps-prefix-cls}-tail > i:after {
                 background-color: @error-color;
+            }
+            &+div .@{steps-prefix-cls}-tabline {
+                background-color: @error-color;
+                &:before,
+                &:after {
+                    background-color: @error-color;
+                }
             }
         }
 
@@ -115,6 +150,28 @@
                 .@{steps-prefix-cls}-head-inner > .@{steps-prefix-cls}-icon {
                     color: @primary-color;
                 }
+            }
+        }
+
+        .@{steps-prefix-cls}-tabline {
+            position: absolute;
+            height: 1px;
+            top: -40px;
+            left: 100px;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 25px;
+            }
+            &:before {
+                right: 0;
+                top: -25px;
+            }
+            &:after {
+                left: 0;
+                bottom: -25px;
             }
         }
     }

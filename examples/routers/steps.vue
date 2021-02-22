@@ -4,15 +4,12 @@
         <Step v-for="(item, index) in BoxListNew" :key="index" :stepList="item.Nodes" :currentIdx="index" :status="item.Nodes[0].status"></Step>
     </Steps>
     <br><br><br><br>
-    <Button @click="change">change</Button>
+    <!-- <Button @click="change">change</Button> -->
     <br><br><br><br>
 </div>
 </template>
 <script>
     export default {
-        props: {
-
-        },
         data () {
             return {
                 total: 512,
@@ -221,9 +218,6 @@
                 ]
             };
         },
-        computed: {
-
-        },
         methods: {
             next () {
                 if (this.current == 3) {
@@ -237,11 +231,11 @@
             }
         },
         mounted () {
-           var BoxListData = this.BoxList;
-           BoxListData.forEach(item => {
-               item.Nodes.forEach(node => {
-                   node.Operator = '可达鸭(10086)'
-                   if (node.Flag) {
+            var BoxListData = this.BoxList;
+            BoxListData.forEach(item => {
+                item.Nodes.forEach(node => {
+                    node.Operator = '可达鸭(10086)';
+                    if (node.Flag) {
                         node.status  = 'finish';
                         node.remark  = '同意';
                     } else {
@@ -252,10 +246,9 @@
                         node.status  = 'wait';
                         node.remark  = '待审批';
                     }
-               });
-           });
-           this.BoxListNew = BoxListData;
-           console.log(this.BoxListNew);
+                });
+            });
+            this.BoxListNew = BoxListData;
         }
     };
 </script>

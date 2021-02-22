@@ -1,9 +1,10 @@
 <template>
     <div :class="wrapClasses" :style="styles">
-        <div :class="[prefixCls + '-tail']"><i></i></div>
-        <Steps :current="index" :currentNode="currentIdx" direction="vertical">
+        <div v-if="showTail" :class="[prefixCls + '-tail']"><i></i></div>
+        <Steps :current="index" :currentNode="currentIdx" direction="vertical" :root="false">
             <StepNode v-for="(item, idx) in stepList" :key="idx" :status="item.status" :title="item.Desc" :operatorTime="item.OperatorTime" :operator="item.Operator" :remark="item.remark"></StepNode>
         </Steps>
+        <span v-if="tabLineWidth" :class="[`${prefixCls}-tabline`]" :style="{width: `${tabLineWidth * 200}px`}"></span>
     </div>
 </template>
 <script>
@@ -52,7 +53,9 @@
                 stepNumber: '',
                 nextError: false,
                 total: 1,
-                currentStatus: ''
+                currentStatus: '',
+                tabLineWidth:false,  //换行折线
+                showTail: true       //流程横线
             };
         },
         computed: {
@@ -89,7 +92,9 @@
             },
             styles () {
                 return {
-                    width: `${1/this.total*100}%`
+                    // width: `${1/this.total*100}%`
+                    width: '200px',
+                    marginBottom:'60px'
                 };
             }
         },

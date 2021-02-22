@@ -96,7 +96,8 @@
             },
             styles () {
                 return {
-                    width: `${1/this.total*100}%`
+                    // width: `${1/this.total*100}%`
+                    width: '150px',
                 };
             }
         },

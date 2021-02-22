@@ -7,7 +7,7 @@
     import { oneOf } from '../../utils/assist';
 
     const prefixCls = 'ivu-steps';
-
+    // 防抖功能
     function debounce(fn) {
         let waiting;
         return function() {
@@ -50,6 +50,10 @@
                     return oneOf(value, ['horizontal', 'vertical']);
                 },
                 default: 'horizontal'
+            },
+            root: {
+                type: Boolean,
+                default: true,
             }
         },
         computed: {
@@ -121,16 +125,32 @@
                 this.updateChildProps(true);
                 this.setNextError();
                 this.updateCurrent(true);
+            },
+            checkWidth() {
+                // 获取容器的宽度
+                const elWidth = this.$el.offsetWidth;
+                // 获取一行显示多少个节点
+                const t = Math.floor(elWidth/200);
+                const slots = this.$slots.default;
+                if(!slots) return;
+                // 找出每行最后一个的节点去掉'____',并给下一个添加换行曲折线
+                [...slots].forEach((vm,index) => {
+                    vm.componentInstance.tabLineWidth = index && index % t === 0 ? t - 1 : 0;
+                    vm.componentInstance.showTail = (index + 1) % t !== 0;
+                });
             }
         },
         mounted () {
+            if(this.root) {
+                setTimeout(() => this.checkWidth(), 100); 
+                window.onresize = () => this.checkWidth();
+            }
             this.updateSteps();
             this.$on('append', this.debouncedAppendRemove());
             this.$on('remove', this.debouncedAppendRemove());
         },
         watch: {
             current (val) {
-                console.log(val);
                 this.updateChildProps();
             },
             status () {
