@@ -5,6 +5,7 @@
             <StepNode v-for="(item, idx) in stepList" :key="idx" :status="item.status" :title="item.Desc" :operatorTime="item.OperatorTime" :operator="item.Operator" :remark="item.remark"></StepNode>
         </Steps>
         <span v-if="tabLineWidth" :class="[`${prefixCls}-tabline`]" :style="{width: `${tabLineWidth * 200}px`}"></span>
+        <span v-if="!showTail" :class="[prefixCls + '-tablineHead']" :style="styleLine" ></span>
     </div>
 </template>
 <script>
@@ -55,7 +56,8 @@
                 total: 1,
                 currentStatus: '',
                 tabLineWidth:false,  //换行折线
-                showTail: true       //流程横线
+                showTail: true,       //流程横线
+                height:0
             };
         },
         computed: {
@@ -96,6 +98,16 @@
                     width: '200px',
                     marginBottom:'60px'
                 };
+            },
+            styleLine(){
+                return{
+                    width:'1px',
+                    height:`${this.height}px`,
+                    position:'absolute',
+                    top:'3px',
+                    left:'13px',
+                    zIndex: '-11'
+                };
             }
         },
         methods: {
@@ -106,7 +118,7 @@
                 if (this.currentStatus == 'error') {
                     this.$parent.setNextError();
                 }
-            }
+            },
         },
         created () {
             this.currentStatus = this.status;

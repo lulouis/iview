@@ -136,7 +136,15 @@
                 // 找出每行最后一个的节点去掉'____',并给下一个添加换行曲折线
                 [...slots].forEach((vm,index) => {
                     vm.componentInstance.tabLineWidth = index && index % t === 0 ? t - 1 : 0;
-                    vm.componentInstance.showTail = (index + 1) % t !== 0;
+                    vm.componentInstance.showTail = t !== 0 ? (index + 1) % t !== 0 : false;
+                    if(index === slots.length - 1) return;
+                    if(t && t !== 1 && !vm.componentInstance.showTail) {
+                        const arr = slots.slice(index + 1 - t, index + 1).map(el=>  el.elm.offsetHeight);
+                        const maxLength = Math.max(...arr);
+                        vm.componentInstance.height = maxLength;
+                    } else if (t <= 1) {
+                        vm.componentInstance.height = vm.elm.offsetHeight + 60;
+                    }
                 });
             }
         },

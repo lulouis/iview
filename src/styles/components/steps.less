@@ -31,6 +31,9 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @steps-wait-tail-color;
             }
+            .@{steps-prefix-cls}-tablineHead {
+                background-color: @steps-wait-tail-color;
+            }
             &+div .@{steps-prefix-cls}-tabline {
                 background-color: @steps-wait-tail-color;
                 &:before,
@@ -56,6 +59,9 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @border-color-split;
             }
+            .@{steps-prefix-cls}-tablineHead {
+                background-color: @border-color-split;
+            }
             &+div .@{steps-prefix-cls}-tabline {
                 background-color: @border-color-split;
                 &:before,
@@ -77,6 +83,9 @@
                 background: @primary-color;
                 // transition: all @transition-time @ease-in-out;
                 opacity: 1;
+            }
+            .@{steps-prefix-cls}-tablineHead {
+                background: @primary-color;
             }
             &+div .@{steps-prefix-cls}-tabline {
                 background: @primary-color;
@@ -110,6 +119,9 @@
             .@{steps-prefix-cls}-tail > i {
                 background-color: @border-color-split;
             }
+            .@{steps-prefix-cls}-tablineHead {
+                background-color: @border-color-split;
+            }
             &+div .@{steps-prefix-cls}-tabline {
                 background-color: @border-color-split;
                 &:before,
@@ -122,6 +134,9 @@
         &.@{steps-prefix-cls}-next-error {
             .@{steps-prefix-cls}-tail > i,
             .@{steps-prefix-cls}-tail > i:after {
+                background-color: @error-color;
+            }
+            .@{steps-prefix-cls}-tablineHead {
                 background-color: @error-color;
             }
             &+div .@{steps-prefix-cls}-tabline {
@@ -157,21 +172,23 @@
             position: absolute;
             height: 1px;
             top: -40px;
-            left: 100px;
+            left: 14px;
             &:before,
             &:after {
                 content: '';
                 position: absolute;
                 width: 1px;
-                height: 25px;
+                height: 35px;
             }
             &:before {
+                height: 35px;
+                z-index: -11;
                 right: 0;
-                top: -25px;
+                top: -35px;
             }
             &:after {
                 left: 0;
-                bottom: -25px;
+                bottom: -35px;
             }
         }
     }
