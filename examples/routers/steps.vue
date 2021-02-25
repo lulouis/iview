@@ -120,6 +120,134 @@
                         Nodes: [
                             {
                                 Name: 'node2',
+                                Desc: '中心负责人2-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            },
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人2-2',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人2-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            },
+                            {
+                                Name: 'node2',
+                                Desc: '中心负责人2-2',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '2019-10-24',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 1,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node2',
                                 Desc: '中心负责人3-1',
                                 Tag: '中心负责人',
                                 Scope: '',
@@ -214,7 +342,322 @@
                         ],
                         AllYes: false,
                         Agent: null
-                    }
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
+                    {
+                        Nodes: [
+                            {
+                                Name: 'node3',
+                                Desc: '中心负责人4-1',
+                                Tag: '中心负责人',
+                                Scope: '',
+                                SystemName: '管理后台',
+                                Actions: [
+                                    {
+                                        ActionName: 'ok',
+                                        ActionDesc: '通过'
+                                    },
+                                    {
+                                        ActionName: 'no',
+                                        ActionDesc: '拒绝'
+                                    },
+                                    {
+                                        ActionName: 'back',
+                                        ActionDesc: '打回'
+                                    }
+                                ],
+                                PlanningLeader: '00209',
+                                Operator: '',
+                                OperatorTime: '',
+                                ActionName: '',
+                                ActionDesc: '',
+                                Flag: 2,
+                                BackNodeName: '',
+                                BackNodeDesc: ''
+                            }
+                        ],
+                        AllYes: false,
+                        Agent: null
+                    },
                 ]
             };
         },
